@@ -1,0 +1,105 @@
+<!-- project-ui-structure.component.html -->
+
+<h1>🎯 Project UI Structure (PrimeNG Components)</h1>
+
+<section>
+  <h2>Buttons</h2>
+  <p-button label="Primary" class="p-button-primary"></p-button>
+  <p-button label="Secondary" class="p-button-secondary"></p-button>
+  <p-button label="Success" severity="success"></p-button>
+  <p-button label="Warning" severity="warn"></p-button>
+  <p-button label="Disabled" disabled="true"></p-button>
+  <p-button label="With Ripple" pRipple="true"></p-button>
+</section>
+
+<section>
+  <h2>Inputs</h2>
+  <input type="text" pInputText placeholder="Regular" />
+  <p-password placeholder="Password"></p-password>
+  <p-inputMask mask="999-999"></p-inputMask>
+  <p-calendar [(ngModel)]="date" showIcon="true"></p-calendar>
+  <p-checkbox label="Accept Terms"></p-checkbox>
+  <p-chips [(ngModel)]="chips"></p-chips>
+  <p-colorPicker [(ngModel)]="color"></p-colorPicker>
+  <p-editor [(ngModel)]="htmlText"></p-editor>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">#</span>
+    <input type="text" pInputText placeholder="Username" />
+  </div>
+</section>
+
+<section>
+  <h2>Selects & Lists</h2>
+  <p-dropdown [options]="options"></p-dropdown>
+  <p-multiSelect [options]="options"></p-multiSelect>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">#</span>
+    <input type="text" pInputText placeholder="Username" />
+  </div>
+  <p-listbox [options]="options" [(ngModel)]="selectedCars"></p-listbox>
+</section>
+
+
+<section>
+  <h2>Data Table & Lists</h2>
+  <p-table [value]="products">
+    <ng-template pTemplate="header">
+      <tr><th>Code</th><th>Name</th><th>Category</th><th>Quantity</th></tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-p>
+      <tr><td>{{p.code}}</td><td>{{p.name}}</td><td>{{p.category}}</td><td>{{p.quantity}}</td></tr>
+    </ng-template>
+  </p-table> 
+</section>
+
+<section>
+  <h2>Overlays & Dialogs</h2>
+  <p-dropdown [options]="options"></p-dropdown>
+  <p-button label="Show Dialog" (click)="visible = true"></p-button>
+  <p-dialog [header]="'Dialog Title'" [(visible)]="visible">
+    <p>Dialog content here</p>
+  </p-dialog> 
+</section>
+
+<section>
+  <h2>Feedback</h2>
+  <p-progressBar [value]="50"></p-progressBar>
+</section>
+
+<section>
+  <h2>Overlay Helpers</h2>
+  <input type="text" pInputText pTooltip="Enter your name" tooltipPosition="top" />
+  <p-button label="Hover me" pTooltip="Save" tooltipPosition="right"></p-button>
+</section>
+
+<section>
+  <h2>Panels & Containers</h2>
+  <p-panel header="Info Panel">
+    <p>This is inside a panel</p>
+  </p-panel>
+  <p-card title="Card Title" subTitle="Card Subtitle">
+    <p>Card content...</p>
+  </p-card>
+  <p-accordion>
+    <p-accordionTab header="First">
+      Content 1
+    </p-accordionTab>
+    <p-accordionTab header="Second">
+      Content 2
+    </p-accordionTab>
+  </p-accordion>
+  <p-toolbar>
+    <div class="p-toolbar-group-left">
+      <p-button label="New"></p-button>
+    </div>
+  </p-toolbar>
+</section>
+
+<section>
+  <h2>Navigation</h2>
+  <p-tabView>
+    <p-tabPanel header="Tab 1">Tab Content 1</p-tabPanel>
+    <p-tabPanel header="Tab 2">Tab Content 2</p-tabPanel>
+  </p-tabView>
+  <p-menu [model]="menuItems"></p-menu>
+</section>

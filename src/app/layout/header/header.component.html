@@ -1,0 +1,21 @@
+<header class="app-header p-3 flex justify-between items-center shadow-md bg-white">
+  <!-- Sidebar Toggle Button -->
+  <button pButton icon="pi pi-bars" class="p-button-text" (click)="toggleSidebar()"></button>
+
+  <!-- Logo -->
+  <img src="assets/img/logo/logo-big-black.png" alt="Logo" class="h-10" />
+
+  <!-- Right-side Tools -->
+  <div class="flex items-center gap-3">
+    <!-- Search -->
+    <button pButton icon="pi pi-search" class="p-button-text" (click)="onSearchClick()"></button>
+
+    <!-- Apps Dropdown -->
+    <p-menu #appMenu [popup]="true" [model]="appItems"></p-menu>
+    <button pButton icon="pi pi-th-large" class="p-button-text" (click)="appMenu.toggle($event)"></button>
+
+    <!-- User Dropdown -->
+    <p-menu #userMenu [popup]="true" [model]="userItems"></p-menu>
+    <button pButton icon="pi pi-user" class="p-button-text" (click)="userMenu.toggle($event)"></button>
+  </div>
+</header>
